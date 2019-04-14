@@ -1,18 +1,6 @@
 ﻿//namespace in .NET framework, where we have basic utility classes and primitive typster
 using System;
 
-//used to work with lists, collections
-using System.Collections.Generic;
-
-//used to work with data
-using System.Linq;
-
-//used to work with text and coding
-using System.Text;
-
-//used to build multi threaded applications
-using System.Threading.Tasks;
-
 namespace HelloWorld
 {
     class Program
@@ -20,7 +8,30 @@ namespace HelloWorld
         //entry point to app
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World");
+            Console.WriteLine("Please enter the width of your image:  ");
+            string widthInput = Console.ReadLine();
+            double width = Convert.ToDouble(widthInput);
+
+            Console.WriteLine("Please enter the height of your image:  ");
+            string heightInput = Console.ReadLine();
+            double height = Convert.ToDouble(heightInput);
+
+            if (width == 8.5 && height == 11.0)
+            {
+                Console.WriteLine("Your image is a portrait image.");
+            }
+            else if (width == 11.0 && height == 8.5)
+            {
+                Console.WriteLine("Your image is a landscape image.");
+            }
+            else
+            {
+                Console.WriteLine("Your image is neither landscape or portrait.");
+            }
+
+            Console.ReadLine();
+
+
         }
     }
 }
