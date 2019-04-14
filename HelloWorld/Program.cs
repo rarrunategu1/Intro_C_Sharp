@@ -1,26 +1,39 @@
 ﻿//namespace in .NET framework, where we have basic utility classes and primitive typster
 using System;
 
-//used to work with lists, collections
-using System.Collections.Generic;
-
-//used to work with data
-using System.Linq;
-
-//used to work with text and coding
-using System.Text;
-
-//used to build multi threaded applications
-using System.Threading.Tasks;
-
 namespace HelloWorld
 {
     class Program
     {   
-        //entry point to app
+        
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World");
+            Console.WriteLine("Please enter the speed limit:  ");
+            string speedLimitInput = Console.ReadLine();
+            byte speedLimit = Convert.ToByte(speedLimitInput);
+
+            Console.WriteLine("Please enter the speed of the car:  ");
+            string carSpeedInput = Console.ReadLine();
+            byte carSpeed = Convert.ToByte(carSpeedInput);
+
+            byte speedExcessDemeritAssigner = 5;
+
+            if (carSpeed <= speedLimit)
+            {
+                Console.WriteLine("OK");
+            }
+            else if ((carSpeed - speedLimit) >= 5)
+            {
+                int demeritPoints = (int)((carSpeed - speedLimit) / speedExcessDemeritAssigner);
+
+                Console.WriteLine("You have incurred {0} demerit points.", demeritPoints);
+
+                if (demeritPoints > 12)
+                {
+                    Console.WriteLine("License Suspended");
+                }
+            }
+            Console.ReadLine();
         }
     }
 }
