@@ -30,6 +30,18 @@ namespace HelloWorld
             }
 
             Console.ReadLine();
+            
+            //NOTE FOR ANOTHER WAY USING ENUM
+        //{
+            //var orientation = width > height ? ImageOrientation.Landscape : ImageOrientation.Portrait;
+            //Console.WriteLine("Image orientation is " + orientation);
+        //}
+
+        //public enum ImageOrientation
+        //{
+            //Landscape,
+            //Portrait
+        //}
 
 
         }
