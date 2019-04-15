@@ -1,26 +1,24 @@
 ﻿//namespace in .NET framework, where we have basic utility classes and primitive typster
 using System;
 
-//used to work with lists, collections
-using System.Collections.Generic;
-
-//used to work with data
-using System.Linq;
-
-//used to work with text and coding
-using System.Text;
-
-//used to build multi threaded applications
-using System.Threading.Tasks;
-
 namespace HelloWorld
 {
     class Program
     {   
-        //entry point to app
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World");
+            int counter = 0;
+
+            for (int i = 1; i <= 100; i++)
+            {
+                if (i % 3 == 0)
+                {
+                    counter += 1;
+                    //Console.WriteLine(i);
+                }
+            }
+            Console.WriteLine(counter);
+            Console.ReadLine();
         }
     }
 }
