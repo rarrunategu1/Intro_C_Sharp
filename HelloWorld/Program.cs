@@ -5,10 +5,20 @@ namespace HelloWorld
 {
     class Program
     {   
-        //entry point to app
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World");
+            float constVariable = variables();
+            Console.WriteLine(constVariable);
+
+            Console.ReadLine();
+        }
+
+        //const variables should always be used for values that should remain the same
+        public static float variables()
+        {
+            const float Pi = 3.14f;
+            return Pi;
         }
     }
+
 }
