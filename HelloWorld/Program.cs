@@ -8,7 +8,12 @@ namespace HelloWorld
         static void Main(string[] args)
         {
             float constVariable = variables();
-            Console.WriteLine(constVariable);
+            Console.WriteLine("variables method: {0}",constVariable);
+            Console.WriteLine();
+
+
+            typeConversion();
+
 
             Console.ReadLine();
         }
@@ -18,6 +23,22 @@ namespace HelloWorld
         {
             const float Pi = 3.14f;
             return Pi;
+        }
+
+        public static void typeConversion()
+        {
+            try
+            {
+                string trueOrFalse = "Hi";
+                bool didStringSayTrueOrFalse = Convert.ToBoolean(trueOrFalse);
+                Console.WriteLine("typeConversion Method: " +didStringSayTrueOrFalse);
+                Console.ReadLine();
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("typeConversion Method:  The string could not be converted into a boolean");
+                Console.ReadLine();
+            }
         }
     }
 
