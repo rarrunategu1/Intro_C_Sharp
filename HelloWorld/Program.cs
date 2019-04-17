@@ -22,6 +22,10 @@ namespace HelloWorld
             arrays();
             Console.WriteLine();
 
+            operators();
+            Console.WriteLine();
+            
+
 
             Console.ReadLine();
         }
@@ -83,6 +87,8 @@ namespace HelloWorld
 
         public static void arrays()
         {
+            Console.WriteLine("arrays Method: ");
+            
             int[] numbers = new int[3];
 
             numbers[0] = 1;
@@ -107,6 +113,21 @@ namespace HelloWorld
             string formatNames = string.Join(",", names);
             Console.WriteLine("Initialized a string with 3 names and using string.Join to print them all out: ");
             Console.WriteLine(formatNames);
+        }
+
+        public static void operators()
+        {
+            int a = 1;
+            int b = 3;
+
+            Console.WriteLine("operators Method: ");
+            Console.WriteLine("{0} > {1} = {2}" ,a, b, a > b);
+            Console.WriteLine("{0} + {1} = {2}" ,a, b, a + b);
+            Console.WriteLine("{0} / {1} = {2}" ,a, b, a / b);
+            Console.WriteLine("{0} / {1} = {2}" ,a, b, (float)a / (float)b);
+            Console.WriteLine("{0} * {1} = {2}" ,a, b, a * b);
+            Console.WriteLine("{0} - {1} = {2}" ,a, b, a - b);
+            Console.WriteLine("{0} % {1} = {2}" ,a, b, a % b);
         }
     }
 
