@@ -24,6 +24,9 @@ namespace HelloWorld
 
             operators();
             Console.WriteLine();
+
+            conditionals();
+            Console.WriteLine();
             
 
 
@@ -160,6 +163,64 @@ namespace HelloWorld
             Console.WriteLine("{0} - {1} = {2}" ,a, b, a - b);
             Console.WriteLine("{0} % {1} = {2}" ,a, b, a % b);
         }
+
+        public static void conditionals()
+        {
+            Console.WriteLine("conditionals Method: ");
+
+            Console.WriteLine("If/Else statement- ");
+            int hour = 10;
+
+            if (hour > 0 && hour < 12)
+            {
+                Console.WriteLine("It's morning.");
+            }
+            else if ( hour >= 12 && hour < 18)
+            {
+                Console.WriteLine("It's afternoon.");
+            }
+            else
+            {
+                Console.WriteLine("It's evening.");
+            }
+
+            Console.WriteLine("Conditional operator- ");
+            bool isGoldCustomer = true;
+
+            //float price;
+            //if(isGoldCustomer)
+            //{
+                //price = 19.95f;
+            //}
+            //else
+            //{
+                //price = 29.95f;
+            //}
+
+            float price = (isGoldCustomer) ? 19.95f : 29.95f;
+            Console.WriteLine(price);
+            
+
+            Console.WriteLine("Switch case statement- ");
+            var season = Season.Autumn;
+            switch (season)
+            {
+                case Season.Autumn:
+                    Console.WriteLine("It's Autumn.");
+                    break;
+
+                case Season.Summer:
+                    Console.WriteLine("It's Summer.");
+                    break;
+
+                default:
+                    Console.WriteLine("I don't understand that season.");
+                    break;
+
+            }
+
+        }
+
     }
 
 }
