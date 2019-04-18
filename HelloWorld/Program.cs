@@ -40,19 +40,50 @@ namespace HelloWorld
         public static void typeConversion()
         {
             string trueOrFalse = "Hi";
+            
+            Console.WriteLine("typeConversion Method: ");
 
+            Console.WriteLine("Converting a string to a boolean value- ");
             try
             {
                 bool didStringSayTrueOrFalse = Convert.ToBoolean(trueOrFalse);
-                Console.WriteLine("typeConversion Method: ");
                 Console.WriteLine("We can convert the string '{0}' to a boolean value", trueOrFalse);
                 Console.WriteLine(didStringSayTrueOrFalse);
             }
             catch (Exception)
             {   
-                Console.WriteLine("typeConversion Method: ");
                 Console.WriteLine("We cannot convert the string '{0}' to a boolean value", trueOrFalse);
             }
+
+            Console.WriteLine();
+
+            string number = "255";
+            Console.WriteLine("Converting a string to a byte- ");
+            try
+            {
+                
+                byte b = Convert.ToByte(number);
+                Console.WriteLine("We can convert the string '{0}' to a byte", number);
+                Console.WriteLine(b);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("We cannot convert the string '{0}' to a byte", number);
+            }
+
+            //CONVERSION OF A STRING INTO AN INT
+            var numberString = "1234";
+            //error says it cannot convert type string to int
+            //int i = (int)number;
+
+            //use Convert.To
+            int i = Convert.ToInt32(numberString);
+
+            //EXPLICIT CONVERSION TO TELL COMPILER THAT WE ARE AWARE OF POSSIBLE DATA LOSS
+            //If the int is not between 0 - 255 you will receive incorrect info due to data loss
+            int anotherNumber = 1;
+            //byte b = i;
+            byte newByte = (byte)anotherNumber;
         }
 
         public static void strings()
