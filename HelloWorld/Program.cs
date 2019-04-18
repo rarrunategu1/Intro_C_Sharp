@@ -1,6 +1,8 @@
 ﻿//namespace in .NET framework, where we have basic utility classes and primitive typster
 using System;
 
+using HelloWorld.Math;
+
 namespace HelloWorld
 {
     class Program
@@ -26,6 +28,9 @@ namespace HelloWorld
             Console.WriteLine();
 
             conditionals();
+            Console.WriteLine();
+
+            objectsForOtherClassesInSameNameSpace();
             Console.WriteLine();
             
 
@@ -218,8 +223,28 @@ namespace HelloWorld
                     break;
 
             }
-
         }
+
+        public static void objectsForOtherClassesInSameNameSpace()
+        {
+            
+            Console.WriteLine("objectsForOtherClassesInSameNameSpace Method: ");
+            Console.WriteLine("Uses Introduce method in Person class- ");
+            //CREATE OBJECT FOR PERSON
+            Person john = new Person();
+            john.FirstName = "John";
+            john.LastName = "Smith";
+            john.Introduce();
+
+            Console.WriteLine();
+
+            Console.WriteLine("Uses Add method in Calculator class located in another folder of HelloWorld namespace- ");
+            Calculator calculator = new Calculator();
+            int result = calculator.Add(1,2);
+            Console.WriteLine(result);
+        }
+
+        
 
     }
 
