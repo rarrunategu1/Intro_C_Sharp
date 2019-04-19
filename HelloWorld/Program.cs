@@ -31,6 +31,8 @@ namespace HelloWorld
             Console.WriteLine();
 
             objectsForOtherClassesInSameNameSpace();
+           
+           
             Console.WriteLine();
             
             enumerator();
@@ -234,15 +236,20 @@ namespace HelloWorld
         }
 
         public static void objectsForOtherClassesInSameNameSpace()
-        {
+        {   
+            
             
             Console.WriteLine("objectsForOtherClassesInSameNameSpace Method: ");
             Console.WriteLine("Uses Introduce method in Person class- ");
             //CREATE OBJECT FOR PERSON
-            Person john = new Person();
+            Person john = new Person() {Age = 20};
             john.FirstName = "John";
             john.LastName = "Smith";
             john.Introduce();
+            Console.WriteLine("John is currently {0} years old", john.Age);
+             //calling incrementAge and MakeOld methods in Person class
+            john.IncrementAge(john.Age);
+            john.MakeOld(john);
 
             Console.WriteLine();
 
@@ -251,6 +258,8 @@ namespace HelloWorld
             int result = calculator.Add(1,2);
             Console.WriteLine(result);
         }
+
+        
 
         public enum ShippingMethod
         {
