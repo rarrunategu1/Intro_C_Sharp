@@ -44,6 +44,9 @@ namespace HelloWorld
             referenceAndValueTypes();
             Console.WriteLine();
 
+            maxNumber();
+            Console.WriteLine();
+
 
             Console.ReadLine();
         }
@@ -353,6 +356,33 @@ namespace HelloWorld
 
         }
 
-    }
+        //EXERCISE_B5 - ASK USER TO ENTER SERIES OF NUMBERS SEPERATED BY A COMMA.  FIND THE MAX OF THE NUMBERS AND DISPLAY ON THE CONSOLE.
+        public static void maxNumber()
+        {
+            int maxDigit = 0;
+            
+            Console.WriteLine("Enter a series of numbers seperated by a comma: ");
+            String customerInput = Console.ReadLine();
 
+            String [] numbers = customerInput.Split(new char[] {','});
+
+            //Console.WriteLine(numbers[1]);
+
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                if (Convert.ToInt32(numbers[i]) > maxDigit)
+                {
+                    maxDigit = Convert.ToInt32(numbers[i]);
+                }
+                else if (Convert.ToInt32(numbers[i]) < maxDigit || Convert.ToInt32(numbers[i]) == maxDigit)
+                {
+                    continue;
+                }
+            }
+            Console.WriteLine(maxDigit);
+        }
+    }
 }
+
+            
+  
