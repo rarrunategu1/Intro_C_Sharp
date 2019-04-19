@@ -33,6 +33,8 @@ namespace HelloWorld
             objectsForOtherClassesInSameNameSpace();
             Console.WriteLine();
             
+            enumerator();
+            Console.WriteLine();
 
 
             Console.ReadLine();
@@ -244,6 +246,40 @@ namespace HelloWorld
             Console.WriteLine(result);
         }
 
+        public enum ShippingMethod
+        {
+            //not setting a value will make the first member a 0 and every member thereafter will be incremented by 1
+            //best practice is to set value to enums so that they don't change due to other circumstances
+            RegularAirMail =  1,
+            RegisteredAirMail = 2,
+            Express = 3   
+        }
+
+        public static void enumerator()
+        {
+            Console.WriteLine("enumerator Method: ");
+            Console.WriteLine("Casting enum to conver to an int- ");
+            var method = ShippingMethod.Express;
+            //prints 3
+            Console.WriteLine((int)method);
+            
+
+            Console.WriteLine("Casting to convert a number into a shipping method- ");
+            var methodId = 3;
+            //prints Express
+            Console.WriteLine((ShippingMethod)methodId);
+
+            Console.WriteLine("Casting to convert a method to a string- ");
+            //prints Express
+            Console.WriteLine(method.ToString());
+            
+            Console.WriteLine("Casting to convert a string into a shipping method- ");
+            var methodName = "Express";
+            //Convert to shipping method enumeration by parsing the string into a different type - a shipping method
+            var shippingMethod = (ShippingMethod)Enum.Parse(typeof(ShippingMethod), methodName);
+            //prints Express
+            Console.WriteLine(shippingMethod);
+        }
         
 
     }
