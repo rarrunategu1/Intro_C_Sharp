@@ -39,6 +39,9 @@ namespace HelloWorld
             randomClass();
             Console.WriteLine();
 
+            referenceAndValueTypes();
+            Console.WriteLine();
+
 
             Console.ReadLine();
         }
@@ -316,6 +319,29 @@ namespace HelloWorld
                 
             Console.WriteLine(password);
             
+        }
+
+        public static void referenceAndValueTypes()
+        {   
+            Console.WriteLine("referenceAndValueTypesMethod: ");
+
+            Console.WriteLine("VALUE TYPES take two completely independent places in the stack if a is just copied to b- ");
+            int a = 10;
+            int b = a;
+            b++;
+            Console.WriteLine(string.Format("a: {0}, b: {1}", a, b));
+            // a = 10, b = 11
+
+            Console.WriteLine();
+
+            Console.WriteLine("REFERENCE TYPES - they make copies of their reference- not values- ");
+            //array1 stored on heap, CLR creates a variable on the stack called array1 with the memory address it has on the heap
+            int [] array1 = new int[3] {1,2,3};
+            //CLR makes a variable on the stack called array2 and gives it the same memory address as the one on the heap
+            int [] array2 = array1;
+            array2[0] = 0;
+            Console.WriteLine(string.Format("array1: {0}, array2: {1}", array1[0], array2[0]));
+
         }
 
     }
