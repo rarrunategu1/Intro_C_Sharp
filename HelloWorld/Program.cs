@@ -36,6 +36,9 @@ namespace HelloWorld
             enumerator();
             Console.WriteLine();
 
+            randomClass();
+            Console.WriteLine();
+
 
             Console.ReadLine();
         }
@@ -281,6 +284,39 @@ namespace HelloWorld
             Console.WriteLine(shippingMethod);
         }
         
+        public static void randomClass()
+        {   
+            Console.WriteLine("randomeClass Method: ");
+            var random = new Random();
+            Console.WriteLine("Uses for loop to print out 10 random numbers with random.Next- ");
+            for (int i = 0; i < 10; i++)
+            {
+               Console.WriteLine(random.Next());
+            }
+            
+            Console.WriteLine();
+
+            Console.WriteLine("Uses for loop to print out 10 random numbers between the numbers of 1 and 10 with random.Next- ");
+            for (int i = 0; i < 10; i++)
+            {
+               Console.WriteLine(random.Next(1, 10));
+            }
+
+            Console.WriteLine();
+
+            Console.WriteLine("Uses for loop to print out a random password with 10 alpha characters using random.Next and stores it in a string since strings are immutable- ");
+            const int passwordLength = 10;
+            char [] buffer = new char[passwordLength];
+            for (int i = 0; i < passwordLength; i++)
+            {
+                buffer[i] = (char)('a' + random.Next(0, 26));
+            }
+            //create string based on that char array
+            string password = new string(buffer);
+                
+            Console.WriteLine(password);
+            
+        }
 
     }
 
